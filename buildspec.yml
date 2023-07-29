@@ -1,0 +1,21 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.7
+    commands:
+      - echo Checking out code...
+      - echo Setting up Python 3.7.17...
+      - echo Installing dependencies...
+      - make install
+  build:
+    commands:
+      - echo Linting the code...
+      - make lint
+      - echo Running tests...
+      - make test
+artifacts:
+  files:
+    - '**/*'
+  discard-paths: yes
