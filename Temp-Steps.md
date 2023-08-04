@@ -39,13 +39,130 @@ Source: [Gateway Endpoints for Amazon S3](https://docs.aws.amazon.com/vpc/latest
 
 Step 3: Create an IAM Role for CodeBuild
 
-1.  Navigate to the IAM console, click "Roles" on the left, then click "Create role".
+Source: [AWS CodeBuild Setup](https://docs.aws.amazon.com/codebuild/latest/userguide/setting-up.html)
+1. ###### To create a CodeBuild service role (console)
+
+1.  Open the IAM console at [https://console.aws.amazon.com/iam/](https://console.aws.amazon.com/iam/).
     
-2.  Select "AWS service" as the trusted entity type, then select "CodeBuild".
+    You should have already signed in to the console by using one of the following:
     
-3.  Click "Next: Permissions". In the policy list, find and select "AmazonS3FullAccess", which gives CodeBuild the permission to access S3.
+    -   Your AWS root account. This is not recommended. For more information, see [The AWS account root user](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html) in the *user Guide*.
+        
+    -   An administrator user in your AWS account. For more information, see [Creating Your First AWS account root user and Group](https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html) in the *user Guide*.
+        
+    -   An user in your AWS account with permission to perform the following minimum set of actions:
+        
+        ```iam:AddRoleToInstanceProfile
+        iam:AttachRolePolicy
+        iam:CreateInstanceProfile
+        iam:CreatePolicy
+        iam:CreateRole
+        iam:GetRole
+        iam:ListAttachedRolePolicies
+        iam:ListPolicies
+        iam:ListRoles
+        iam:PassRole
+        iam:PutRolePolicy
+        iam:UpdateAssumeRolePolicy```
+        
+        For more information, see [Overview of IAM Policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html) in the *user Guide*.
+        
     
-4.  Click "Next: Tags" then "Next: Review". Name your role, give it a description if you want, then click "Create role".
+2.  In the navigation pane, choose Policies.
+    
+3.  Choose Create Policy.
+    
+4.  On the Create Policy page, choose JSON.
+    
+5.  For the JSON policy, enter the following, and then choose Review Policy:
+    ```
+     {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Sid": "CloudWatchLogsPolicy",
+          "Effect": "Allow",
+          "Action": [
+            "logs:CreateLogGroup",
+            "logs:CreateLogStream",
+            "logs:PutLogEvents"
+          ],
+          "Resource": "*"
+        },
+        {
+          "Sid": "CodeCommitPolicy",
+          "Effect": "Allow",
+          "Action": [
+            "codecommit:GitPull"
+          ],
+          "Resource": "*"
+        },
+        {
+          "Sid": "S3GetObjectPolicy",
+          "Effect": "Allow",
+          "Action": [
+            "s3:GetObject",
+            "s3:GetObjectVersion"
+          ],
+          "Resource": "*"
+        },
+        {
+          "Sid": "S3PutObjectPolicy",
+          "Effect": "Allow",
+          "Action": [
+            "s3:PutObject"
+          ],
+          "Resource": "*"
+        },
+        {
+          "Sid": "ECRPullPolicy",
+          "Effect": "Allow",
+          "Action": [
+            "ecr:BatchCheckLayerAvailability",
+            "ecr:GetDownloadUrlForLayer",
+            "ecr:BatchGetImage"
+          ],
+          "Resource": "*"
+        },
+        {
+          "Sid": "ECRAuthPolicy",
+          "Effect": "Allow",
+          "Action": [
+            "ecr:GetAuthorizationToken"
+          ],
+          "Resource": "*"
+        },
+        {
+          "Sid": "S3BucketIdentity",
+          "Effect": "Allow",
+          "Action": [
+            "s3:GetBucketAcl",
+            "s3:GetBucketLocation"
+          ],
+          "Resource": "*"
+        }
+      ]
+    }```
+    
+    ###### Note
+    
+    This policy contains statements that allow access to a potentially large number of AWS resources. To restrict AWS CodeBuild to access specific AWS resources, change the value of the `Resource` array. For more information, see the security documentation for the AWS service.
+    
+6.  On the Review Policy page, for Policy Name, enter a name for the policy (for example, **CodeBuildServiceRolePolicy**), and then choose Create policy.
+    
+    ###### Note
+    
+    If you use a different name, be sure to use it throughout this procedure.
+    
+7.  In the navigation pane, choose Roles.
+    
+8.  Choose Create role.
+    
+9.  On the Create role page, with AWS Service already selected, choose CodeBuild, and then choose Next:Permissions.
+    
+10.  On the Attach permissions policies page, select CodeBuildServiceRolePolicy, and then choose Next: Review.
+    
+11.  On the Create role and review page, for Role name, enter a name for the role (for example, **CodeBuildServiceRole**), and then choose Create role.
     
 
 Step 4: Create a CodeBuild Project
