@@ -5,5 +5,4 @@ lint:
 	pylint --disable=R,C hello.py
 
 test:
-	python -m pytest -vv --cov=hello test_hello.py &&\
-	    python -m coverage report -m > coverage.txt
+	python -m pytest -vv --cov=hello test_hello.py
