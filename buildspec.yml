@@ -14,7 +14,7 @@ phases:
       - echo Linting the code...
       - make lint
       - echo Running tests...
-      - `export PYTHONPATH=.` 
+      - export PYTHONPATH=.
       - make test
 artifacts:
   files:
