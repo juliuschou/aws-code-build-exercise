@@ -167,30 +167,42 @@ Source: [AWS CodeBuild Setup](https://docs.aws.amazon.com/codebuild/latest/userg
 
 Step 4: Create a CodeBuild Project
 
-1.  Navigate to the CodeBuild console and click "Create build project".
+1.  Create a GitHub personal access token:
     
-2.  Name your project.
+    -   Sign in to GitHub.
+    -   In the upper-right corner of any page, click your profile photo, then click `Settings`.
+    -   In the left sidebar, click `Developer settings`.
+    -   In the left sidebar, click `Personal access tokens`.
+    -   Click `Generate new token`.
+    -   Give your token a descriptive name.
+    -   Under `Select scopes`, select the scopes for this token. For fetching source code for your build, you'll usually need `repo`.
+    -   Click `Generate token`.
+    -   Copy the token and keep it secure. Once you leave the page, you will not be able to see the token again.
+2.  Create a CodeBuild project:
     
-3.  For "Source", choose "GitHub", then connect to your GitHub account and choose your repository.
+    -   Open the AWS CodeBuild console at [https://console.aws.amazon.com/codesuite/codebuild/home](https://console.aws.amazon.com/codesuite/codebuild/home).
+    -   In the navigation pane, choose `Create build project`.
+    -   For `Project name`, enter a name for this build project. Build project names must be unique across each AWS account. You can also include an optional description of the build project.
+    -   For `Source`, for `Source provider`, choose `GitHub`.
+    -   Choose the `Connect with GitHub personal access token` option.
+    -   Enter your GitHub personal access token in the `Token` box, and click `Connect to GitHub`.
+    -   ![image](https://github.com/juliuschou/aws-code-build-exercise/assets/4725611/061bc467-6b10-43a2-9703-4efbfd6ccbb4)
+
+    -   In the `Repository URL` box, type the HTTPS clone URL to the GitHub repository for this build project.
+3.  Configure the remaining settings:
     
-4.  For "Environment", choose "Managed image", select the operating system, runtime, image, and environment type you desire.
+    -   Under `Environment`, specify the information required for your build project to build the source code.
+    -   Under `Buildspec`, you can provide the build specification directly in the console, or you can use a buildspec file that's included in the source code root directory.
+    -   Under `Artifacts`, specify the settings required for your build project to store the build output.
+    -   Under `Logs`, you can choose to create logs in Amazon CloudWatch Logs or Amazon S3, or both.
+4.  Create the build project:
     
-5.  For the "Service role", choose the role you created in Step 3.
-    
-6.  In the "Additional configuration" section, select the VPC, subnets, and security groups that include the VPC endpoint you created in Step 2.
-    
-7.  For "Buildspec", choose "Use a buildspec file" if you have one in your repository, otherwise, you can choose "Insert build commands" to provide the build commands manually.
-    
-8.  For "Artifacts", choose "Amazon S3", select the bucket you created in Step 1 as the "Bucket name", and name your output artifact if you have one.
-    
-9.  For "Logs", choose "CloudWatch Logs" and "S3 Logs", then choose the bucket you created in Step 1 as the "S3 bucket name".
-    
-10.  Click "Create build project".
+    -   After you've finished configuring your build project, choose `Create build project`.
     
 
 Now you have created an AWS CodeBuild project linked to a GitHub repository, and it's configured to save the logs and outputs to an S3 bucket using a VPC endpoint for access. The CodeBuild project uses the IAM role you created for S3 bucket access.# PracticalMLOpsNoahChapter1-01
 
 ![image](https://github.com/juliuschou/aws-code-build-exercise/assets/4725611/f9e46022-adb5-46bd-95da-b7125a5be355)
 
-![image](https://github.com/juliuschou/aws-code-build-exercise/assets/4725611/f39e3c95-fc74-4756-a652-d1812a454076)
+
 
