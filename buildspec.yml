@@ -15,10 +15,11 @@ phases:
       - make lint
       - echo Running tests...
       - export PYTHONPATH=.
-      - make test
+      - make test     
+      
 reports:
-	pytest_reports:
-		files:
-			- pytest_report.xml
-		base-directory: pytest_reports/
-		file-format: JUNITXML			
+  pytest_reports:
+    files:
+      - pytest_report.xml
+      base-directory: pytest_reports/
+      file-format: JUNITXML			
