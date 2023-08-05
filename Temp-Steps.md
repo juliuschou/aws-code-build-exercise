@@ -189,3 +189,6 @@ Step 4: Create a CodeBuild Project
     
 
 Now you have created an AWS CodeBuild project linked to a GitHub repository, and it's configured to save the logs and outputs to an S3 bucket using a VPC endpoint for access. The CodeBuild project uses the IAM role you created for S3 bucket access.# PracticalMLOpsNoahChapter1-01
+
+![image](https://github.com/juliuschou/aws-code-build-exercise/assets/4725611/f9e46022-adb5-46bd-95da-b7125a5be355)
+
