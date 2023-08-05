@@ -16,7 +16,9 @@ phases:
       - echo Running tests...
       - export PYTHONPATH=.
       - make test
-artifacts:
-  files:
-    - '**/*'
-  discard-paths: yes
+reports:
+	pytest_reports:
+		files:
+			- pytest_report.xml
+		base-directory: pytest_reports/
+		file-format: JUNITXML			
