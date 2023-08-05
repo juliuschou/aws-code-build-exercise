@@ -192,3 +192,5 @@ Now you have created an AWS CodeBuild project linked to a GitHub repository, and
 
 ![image](https://github.com/juliuschou/aws-code-build-exercise/assets/4725611/f9e46022-adb5-46bd-95da-b7125a5be355)
 
+![image](https://github.com/juliuschou/aws-code-build-exercise/assets/4725611/f39e3c95-fc74-4756-a652-d1812a454076)
+
