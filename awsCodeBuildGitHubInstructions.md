@@ -432,6 +432,8 @@ Now you have created an AWS CodeBuild project linked to a GitHub repository, and
 
 
 ## Conclusion
+This comprehensive guide delves into the step-by-step process of integrating MLOps with cloud-native tools. Starting with setting up Python and necessary development tools on a CentOS 7 system, the tutorial provides insights into creating a practical environment using PyCharm and setting up a GitHub repository for version control. Furthermore, the tutorial elucidates the detailed process of integrating AWS services, namely CodeBuild, S3, and VPC, to facilitate continuous integration for machine learning projects. A significant emphasis is given on setting up AWS configurations including creating an S3 bucket, a VPC endpoint for S3, IAM roles for CodeBuild, and finally integrating a CodeBuild project with a GitHub repository.
 
+Through a clear, sequential approach, the tutorial ensures that readers are equipped with the knowledge to successfully establish an MLOps pipeline, from setting up the foundational software to seamlessly connecting AWS services with GitHub. This lays the foundation for enhancing automation and collaboration in the machine learning development lifecycle.
 
 I utilized ChatGPT to enhance this article, as English is my second language.
