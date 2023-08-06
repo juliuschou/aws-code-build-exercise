@@ -8,14 +8,21 @@ Create a new GitHub repository with necessary Python scaffolding using a Makefil
 
 ## Introduction
 
-Welcome to the Practical MLOps tutorial repository! This repository is a step-by-step guide to do the exercise from "Practical MLOps" by Noah Gift and Alfredo Deza.: Using a cloud native build server (AWS Code Build), perform continuous integration for your project. This practice place the a building container in a private subnet. The running container connect to the Internet through the nat gateway created in the public subject. The public subnet has an internet gatway that can be used as channel to internet. This practive also use a vpc endpoint connecting to a S3 bucket to save cost.
+Welcome to the "Practical MLOps" tutorial repository! This repository offers a detailed, step-by-step guide to an exercise from the book "Practical MLOps" by Noah Gift and Alfredo Deza.
+
+In this tutorial, you will:
+
+-   Use a cloud-native build server, specifically AWS CodeBuild, to perform continuous integration for your project.
+-   Set up a building container inside a private subnet.
+-   Ensure that the running container can access the Internet by routing its traffic through a NAT Gateway located in a public subnet.
+-   Understand that the public subnet has an associated Internet Gateway, which serves as a conduit for internet access.
+-   Implement a cost-saving measure by using a VPC endpoint connected to an S3 bucket.
 
 ![image](https://github.com/juliuschou/aws-code-build-exercise/assets/4725611/8c5e554a-7984-4b02-9e5c-37ac00f49cc4)
 
 ## Prerequisite
 
-Plese read [Create a VPC in AWS with Public and Private Subnets & NAT Gateway](https://quileswest.medium.com/create-a-vpc-in-aws-with-public-and-private-subnets-nat-gateway-8c45ca371a82) to Create a VPC in AWS with Public and Private Subnets & NAT Gateway. This link is to a Medium article by Christopher Quiles that explains how to create a VPC in AWS with public and private subnets and a NAT gateway. The article includes step-by-step instructions and screenshots.
-
+Please refer to the Medium article titled "[Create a VPC in AWS with Public and Private Subnets & NAT Gateway](https://quileswest.medium.com/create-a-vpc-in-aws-with-public-and-private-subnets-nat-gateway-8c45ca371a82)" by Christopher Quiles. The article provides detailed, step-by-step instructions, accompanied by screenshots, on how to set up a VPC in AWS with both public and private subnets as well as a NAT gateway.
 
 ## Setup: Upgrading Python & Installing Required Tools
 
