@@ -356,3 +356,75 @@ Set up unit tests for your Flask application. For instance, you could use Python
 * * *
 
 This enhanced guide provides a more comprehensive approach to the initial one. Still, due to the limitations of this format, some specific steps (like detailed AWS console configurations, writing unit tests, setting up AWS Secrets Manager, etc.) might need more in-depth exploration based on specific needs and AWS documentation.
+
+![User](https://chat.openai.com/_next/image?url=https%3A%2F%2Flh3.googleusercontent.com%2Fa%2FAAcHTtcGuIG4KdUQ_CPGAho4yUXInIDR9bgJT8PeLZIN8iST%3Ds96-c&w=96&q=75)
+
+Could you show the operations deatails step by step for 4. Continuous Delivery with AWS CodeBuild:?
+
+Certainly! Setting up Continuous Delivery (CD) using AWS CodeBuild can be intricate, but here's a more detailed step-by-step guide:
+
+### 4\. Continuous Delivery with AWS CodeBuild:
+
+#### a. Prepare a Build Specification File:
+
+Before you start with CodeBuild, you should have a `buildspec.yml` file in the root of your repository. This file tells CodeBuild what to do. A basic example for a Flask app could be:
+
+yamlCopy code
+
+`version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo "Installing dependencies..."
+      - pip install -r requirements.txt
+  build:
+    commands:
+      - echo "Running tests..."
+      - python -m unittest discover
+
+artifacts:
+  files:
+    - '**/*'
+  base-directory: '/'` 
+
+This buildspec installs dependencies, runs tests, and packages all files as build artifacts.
+
+#### b. Set Up AWS CodeBuild:
+
+1.  Open the AWS Management Console and navigate to CodeBuild.
+2.  Click Create build project.
+3.  Project Configuration: Provide a name for your build project.
+4.  Source: Choose "GitHub" and connect your repository.
+    -   For Repository URL, provide the link to your GitHub repository.
+5.  Environment:
+    -   Choose a managed image.
+    -   For Operating system, select "Ubuntu".
+    -   For Runtime(s), select "Standard".
+    -   Choose the Runtime version that matches your needs (usually the latest is a good choice).
+    -   Buildspec: Choose "Use a buildspec file". CodeBuild will automatically detect `buildspec.yml` from the root of your repository.
+6.  Artifacts:
+    -   Type: "No artifacts". Since you are using Elastic Beanstalk, the artifact handling will be done by the EB CLI.
+7.  Logs: Choose AWS CloudWatch Logs to store logs of the builds, which can be useful for debugging.
+8.  Click Create build project.
+
+#### c. Integrate AWS CodeBuild with AWS CodePipeline:
+
+To automate the process from code push to deployment, integrate CodeBuild with CodePipeline:
+
+1.  Navigate to AWS CodePipeline in the AWS Management Console.
+2.  Click Create pipeline.
+3.  Pipeline Name: Provide a name.
+4.  Source Stage:
+    -   Choose "GitHub" and connect your repository.
+5.  Build Stage:
+    -   Choose "AWS CodeBuild" as the build provider.
+    -   Select the region and the build project you created earlier.
+6.  Deploy Stage:
+    -   Choose "AWS Elastic Beanstalk".
+    -   Select your application and environment name.
+7.  Click Create pipeline.
+
+Now, every time you push a change to your GitHub repository, AWS CodePipeline will automatically trigger a build in AWS CodeBuild. If the build (and tests) succeed, it will proceed to deploy your application to AWS Elastic Beanstalk.
+
+Please note: The above steps offer a general approach, and the actual screens or options might slightly differ based on AWS updates or changes after my last training data in September 2021. Always consult AWS official documentation or check the AWS console for the most accurate and detailed information.
