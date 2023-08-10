@@ -157,7 +157,8 @@ Create a file named `app.py` and add the following code:
 
 pythonCopy code
 
-`from flask import Flask
+```
+from flask import Flask
 
 app = Flask(__name__)
 
@@ -166,7 +167,8 @@ def hello():
     return "hello world"
 
 if __name__ == '__main__':
-    app.run()` 
+    app.run()
+``` 
 
 ### 2\. Deploy using AWS Elastic Beanstalk:
 
@@ -182,8 +184,8 @@ Navigate to your project directory and run:
 
 bashCopy code
 
-`eb init -p python-3.7 [your-app-name]
-eb create [your-env-name]` 
+```eb init -p python-3.7 [your-app-name]
+eb create [your-env-name]``` 
 
 After the deployment completes, you can access your Flask application via the URL provided by Elastic Beanstalk.
 
@@ -197,11 +199,13 @@ Visit Github and create a new repository.
 
 bashCopy code
 
-`git init
+```
+git init
 git add .
 git commit -m "Initial commit"
 git remote add origin [your-github-repo-link]
-git push -u origin master` 
+git push -u origin master
+``` 
 
 #### c. Take a screenshot:
 
@@ -268,14 +272,16 @@ Absolutely! Let's enhance the provided guide incorporating the suggested improve
 
 bashCopy code
 
-``python -m venv myenv
-source myenv/bin/activate  # On Windows, use `myenv\Scripts\activate` `` 
+```
+python -m venv myenv
+source myenv/bin/activate  # On Windows, use `myenv\Scripts\activate
+``` 
 
 #### b. Install Flask:
 
 bashCopy code
 
-`pip install Flask` 
+`pip install Flask`
 
 #### c. Create the Flask application:
 
@@ -283,7 +289,8 @@ Make a file named `app.py`. Here's a more robust version with error handling:
 
 pythonCopy code
 
-`from flask import Flask, jsonify
+```
+from flask import Flask, jsonify
 
 app = Flask(__name__)
 
@@ -296,7 +303,8 @@ def not_found(error):
     return jsonify({'error': 'Not found'}), 404
 
 if __name__ == '__main__':
-    app.run()` 
+    app.run()
+``` 
 
 ### 2\. Deploy using AWS Elastic Beanstalk:
 
@@ -310,8 +318,10 @@ bashCopy code
 
 bashCopy code
 
-`eb init -p python-3.7 [your-app-name]
-eb create [your-env-name]` 
+```
+eb init -p python-3.7 [your-app-name]
+eb create [your-env-name]
+``` 
 
 ### 3\. Document on Github:
 
@@ -321,11 +331,13 @@ eb create [your-env-name]`
 
 bashCopy code
 
-`git init
+```
+git init
 git add .
 git commit -m "Initial commit with a more robust Flask app"
 git remote add origin [your-github-repo-link]
-git push -u origin master` 
+git push -u origin master
+``` 
 
 #### c. Enhance the README.md:
 
@@ -371,7 +383,8 @@ Before you start with CodeBuild, you should have a `buildspec.yml` file in the r
 
 yamlCopy code
 
-`version: 0.2
+```
+version: 0.2
 
 phases:
   install:
@@ -386,7 +399,8 @@ phases:
 artifacts:
   files:
     - '**/*'
-  base-directory: '/'` 
+  base-directory: '/'
+``` 
 
 This buildspec installs dependencies, runs tests, and packages all files as build artifacts.
 
