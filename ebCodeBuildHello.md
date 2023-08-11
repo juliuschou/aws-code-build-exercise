@@ -184,8 +184,10 @@ Navigate to your project directory and run:
 
 bashCopy code
 
-```eb init -p python-3.7 [your-app-name]
-eb create [your-env-name]``` 
+```
+eb init -p python-3.7 [your-app-name]
+eb create [your-env-name]
+``` 
 
 After the deployment completes, you can access your Flask application via the URL provided by Elastic Beanstalk.
 
