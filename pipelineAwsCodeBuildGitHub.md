@@ -1,7 +1,7 @@
 
 
-## prerequisite
-- Understand how to install the AWS Elastic Benastalk from the link below:
+## Prerequisite
+### Understand how to install the AWS Elastic Benastalk on Linux from the link below:
 
 [Install the EB CLI on Linux](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install-linux.html)
 
@@ -15,7 +15,7 @@ To install the EB CLI, you can use the following steps:
 
 Once the EB CLI is installed, you can use it to create, manage, and deploy your Elastic Beanstalk environments.
 
-- Understand how to manage multiple version on the same machine from the link below:
+### Understand how to manage multiple version on the same machine from the link below:
 
 [Introducing pyenv: A Simple Way to Manage Python Versions](https://realpython.com/intro-to-pyenv/)
 
