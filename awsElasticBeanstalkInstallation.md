@@ -21,12 +21,14 @@ Step-by-Step:
         
         pythonCopy code
         
-        `from flask import Flask
+        ```
+        from flask import Flask
         application = Flask(__name__)
         
         @application.route('/')
         def hello_world():
-            return 'Hello, World!'` 
+            return 'Hello, World!'
+        ``` 
         
 3.  Deployment:
     
