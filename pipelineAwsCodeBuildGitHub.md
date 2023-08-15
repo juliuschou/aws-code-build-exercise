@@ -58,3 +58,44 @@ AWS Elastic Beanstalk is a service that makes it easy to deploy and manage web a
     -   `Default output format` (e.g., `json`, `text`)
     
     The access key and secret key are provided to you when you create an IAM (Identity and Access Management) user in the AWS Management Console. Ensure that the IAM user has necessary permissions for Elastic Beanstalk operations.
+
+## 3. Setting Up a Flask Application:
+
+Let's create a simple Flask application:
+
+1.  Create a new directory for your project:
+    
+    ```
+    mkdir my_flask_app
+    cd my_flask_app
+    ``` 
+    
+2.  Create a virtual environment:
+    
+    ```
+    python -m venv venv
+    source venv/bin/activate  # On Windows, use `venv\Scripts\activate
+    ``` 
+
+3.  Install Flask:
+    
+    `pip install Flask` 
+    
+4.  Make a file named `app.py`. Here's a more robust version with error handling:
+
+```
+from flask import Flask, jsonify
+
+app = Flask(__name__)
+
+@app.route('/')
+def hello():
+    return "hello world"
+
+@app.errorhandler(404)
+def not_found(error):
+    return jsonify({'error': 'Not found'}), 404
+
+if __name__ == '__main__':
+    app.run()
+``` 
