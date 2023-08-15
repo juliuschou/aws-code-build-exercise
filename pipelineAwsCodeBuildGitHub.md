@@ -117,6 +117,7 @@ Navigate to your project directory and run:
 After the deployment completes, you can access your Flask application via the URL provided by Elastic Beanstalk.
 
 ## 5. Push Code to GitHub
+
 created an empty repository on GitHub, you can push your code to GitHub:
 
 ```
