@@ -99,3 +99,17 @@ def not_found(error):
 if __name__ == '__main__':
     app.run()
 ``` 
+## 4. Deploy using AWS Elastic Beanstalk:
+1. Install the Elastic Beanstalk Command Line Interface (EB CLI):
+
+`pip install awsebcli`
+
+2. Initialize your application:
+
+Navigate to your project directory and run:
+```
+eb init -p python-3.7 [your-app-name]
+eb create [your-env-name]
+```
+After the deployment completes, you can access your Flask application via the URL provided by Elastic Beanstalk.
+
