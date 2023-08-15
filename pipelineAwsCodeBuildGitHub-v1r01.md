@@ -1,6 +1,19 @@
 ![User](https://chat.openai.com/_next/image?url=https%3A%2F%2Flh3.googleusercontent.com%2Fa%2FAAcHTtcGuIG4KdUQ_CPGAho4yUXInIDR9bgJT8PeLZIN8iST%3Ds96-c&w=96&q=75)
 
-Please being aws professional architect. Show the all detail steps to implement the descrition below: I would like to create a CI/CD pipeline with the use of github, aws code build, aws elastic beanstalk. The environment I use is ubuntu 20 and python 3.7. I like to use eb create cli to deploy a hello world Flask application to aws elastic beanstalk. Steps are as below: 1. install pyenv 2. use pyenv to install python3.7 3. install awscli 4. configure it with your AWS credentials and default settings using awscli 5. use python venv to create a "hello world" Flask Application 6. Deploy the Flask Application using AWS Elastic Beanstalk 7. Push Code to GitHub 8. Set up Continuous Delivery with AWS CodeBuild a. In the AWS Management Console, navigate to AWS CodeBuild and create a new build project. b. Connect it with your GitHub repository. c. Configure a buildspec file or use the AWS CodeBuild console to define build commands to test and package your application. d. Use the AWS CodePipeline service to set up a continuous delivery pipeline. Link your source repository (GitHub) to the build stage (AWS CodeBuild) and then to a deploy stage targeting AWS Elastic Beanstalk.
+Please being aws professional architect. Show the all detail steps to implement the descrition below: I would like to create a CI/CD pipeline with the use of github, aws code build, aws elastic beanstalk. The environment I use is ubuntu 20 and python 3.7. I like to use eb create cli to deploy a hello world Flask application to aws elastic beanstalk. Steps are as below: 
+
+1. install pyenv
+2. use pyenv to install python3.7
+3. install awscli
+4. configure it with your AWS credentials and default settings using awscli
+5. use python venv to create a "hello world" Flask Application
+6. Deploy the Flask Application using AWS Elastic Beanstalk
+7. Push Code to GitHub
+8. Set up Continuous Delivery with AWS CodeBuild
+   a. In the AWS Management Console, navigate to AWS CodeBuild and create a new build project.
+   b. Connect it with your GitHub repository.
+   c. Configure a buildspec file or use the AWS CodeBuild console to define build commands to test and package your application.
+   d. Use the AWS CodePipeline service to set up a continuous delivery pipeline. Link your source repository (GitHub) to the build stage (AWS CodeBuild) and then to a deploy stage targeting AWS Elastic Beanstalk.
 
 ChatGPT
 
