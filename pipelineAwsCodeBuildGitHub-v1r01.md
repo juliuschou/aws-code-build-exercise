@@ -2,6 +2,7 @@
 
 Please being aws professional architect. Show the all detail steps to implement the descrition below: I would like to create a CI/CD pipeline with the use of github, aws code build, aws elastic beanstalk. The environment I use is ubuntu 20 and python 3.7. I like to use eb create cli to deploy a hello world Flask application to aws elastic beanstalk. Steps are as below: 
 
+"""
 1. install pyenv
 2. use pyenv to install python3.7
 3. install awscli
@@ -14,6 +15,7 @@ Please being aws professional architect. Show the all detail steps to implement 
    b. Connect it with your GitHub repository.
    c. Configure a buildspec file or use the AWS CodeBuild console to define build commands to test and package your application.
    d. Use the AWS CodePipeline service to set up a continuous delivery pipeline. Link your source repository (GitHub) to the build stage (AWS CodeBuild) and then to a deploy stage targeting AWS Elastic Beanstalk.
+"""
 
 ChatGPT
 
