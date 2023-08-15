@@ -17,27 +17,28 @@ Let's create a simple Flask application:
     
     bashCopy code
     
-    `mkdir my_flask_app
-    cd my_flask_app` 
+    ```
+    mkdir my_flask_app
+    cd my_flask_app
+    ``` 
     
-2.  Create a virtual environment:
-    
-    bashCopy code
-    
-    ``python -m venv venv
-    source venv/bin/activate  # On Windows, use `venv\Scripts\activate` `` 
-    
-3.  Install Flask:
+3.  Create a virtual environment:
     
     bashCopy code
+    
+    ```
+    python -m venv venv
+    source venv/bin/activate  # On Windows, use `venv\Scripts\activate
+    ``` 
+    
+4.  Install Flask:
     
     `pip install Flask` 
     
-4.  Create a file named `application.py`:
+5.  Create a file named `application.py`:
     
-    pythonCopy code
-    
-    `from flask import Flask
+    ```
+    from flask import Flask
     application = Flask(__name__)
     
     @application.route('/')
@@ -45,11 +46,12 @@ Let's create a simple Flask application:
         return "Hello, Elastic Beanstalk!"
     
     if __name__ == '__main__':
-        application.run(debug=True)` 
+        application.run(debug=True)
+    ``` 
     
     Note: Elastic Beanstalk looks for the `application` object by default, so it's crucial to name it as such.
     
-5.  Save your dependencies:
+6.  Save your dependencies:
     
     bashCopy code
     
