@@ -75,13 +75,19 @@ Write a simple Flask application named `app.py`:
 
 pythonCopy code
 
-`from flask import Flask
+```
+from flask import Flask
 
 app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return 'Hello, World!'` 
+    return 'Hello, World!'
+``` 
+
+Save your dependencies:
+
+`pip freeze > requirements.txt`
 
 ### 6\. Deploy the Flask Application using AWS Elastic Beanstalk:
 
