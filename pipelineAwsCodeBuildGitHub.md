@@ -25,6 +25,10 @@ Pyenv is a tool that allows you to easily install and manage multiple versions o
 * Developing projects that require specific versions of Python
 * Creating isolated Python environments for different projects
 
+### Know the concept: [What is AWS Elastic Beanstalk?](https://blog.back4app.com/what-is-aws-elastic-beanstalk/)
+
+AWS Elastic Beanstalk is a service that makes it easy to deploy and manage web applications in the Amazon Web Services (AWS) cloud. It provides a high-level abstraction for managing the underlying infrastructure, so you can focus on your application code.
+
 ## 2. set up the AWS Command Line Interface (CLI) properly before you can execute aws eb create or any other AWS CLI command 
 
 ### Here are the steps you should follow:
