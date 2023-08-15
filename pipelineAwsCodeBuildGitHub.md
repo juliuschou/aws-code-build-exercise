@@ -107,12 +107,32 @@ if __name__ == '__main__':
 
 2.   Initialize your application:
 
-    Navigate to your project directory and run:
+Navigate to your project directory and run:
 
     ```
     eb init -p python-3.7 [your-app-name]
     eb create [your-env-name]
     ```
     
-    After the deployment completes, you can access your Flask application via the URL provided by Elastic Beanstalk.
+After the deployment completes, you can access your Flask application via the URL provided by Elastic Beanstalk.
 
+## 5. Push Code to GitHub
+created an empty repository on GitHub, you can push your code to GitHub:
+
+```
+# Navigate to your project directory (the directory where your code is located) 
+cd /path/to/your/project # Initialize Git (if not already initialized) 
+git init
+
+# Add the files you want to commit to the staging area 
+git add . 
+
+# Commit the changes with a meaningful message 
+git commit -m "Your commit message here" 
+
+# set remote github repository
+git remote add origin git@github.com:YourUsername/YourRepository.git
+
+# Push the committed changes to the master branch of your GitHub repository 
+git push origin master
+```
