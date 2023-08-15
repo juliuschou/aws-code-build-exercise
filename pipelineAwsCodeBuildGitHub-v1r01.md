@@ -105,6 +105,9 @@ bashCopy code
 
 The application should be accessible via a URL provided by Elastic Beanstalk.
 
+![image](https://github.com/juliuschou/aws-code-build-exercise/assets/4725611/259ab133-a492-4a38-be51-353913285dcf)
+
+
 ### 7\. Push Code to GitHub:
 
 First, ensure you have git installed:
