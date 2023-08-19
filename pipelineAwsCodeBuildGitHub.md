@@ -59,6 +59,11 @@ AWS Elastic Beanstalk is a service that makes it easy to deploy and manage web a
     
     The access key and secret key are provided to you when you create an IAM (Identity and Access Management) user in the AWS Management Console. Ensure that the IAM user has necessary permissions for Elastic Beanstalk operations.
 
+4.   Install the Elastic Beanstalk Command Line Interface (EB CLI):
+
+    `pip install awsebcli`
+
+
 ## 3. Setting Up a Flask Application:
 
 Let's create a simple Flask application:
@@ -101,18 +106,17 @@ if __name__ == '__main__':
 ```
 
 ## 4. Deploy using AWS Elastic Beanstalk:
-1.   Install the Elastic Beanstalk Command Line Interface (EB CLI):
 
-    `pip install awsebcli`
-
-2.   Initialize your application:
+1.   Initialize your application:
 
 Navigate to your project directory and run:
 
-    ```
-    eb init -p python-3.7 [your-app-name]
-    eb create [your-env-name]
-    ```
+    `eb init -i`
+
+
+    
+    `eb create [your-env-name]`
+    
     
 After the deployment completes, you can access your Flask application via the URL provided by Elastic Beanstalk.
 
