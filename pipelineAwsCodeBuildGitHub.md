@@ -68,6 +68,9 @@ AWS Elastic Beanstalk is a service that makes it easy to deploy and manage web a
 
 Let's create a simple Flask application:
 
+![image](https://github.com/juliuschou/aws-code-build-exercise/assets/4725611/4d0f24be-4bbf-4864-b9cb-20fd02c403e3)
+
+
 1.  Create a new directory for your project:
     
     ```
@@ -121,9 +124,23 @@ Navigate to your project directory and run:
 
 
 
+2. create Flask config
+
+```
+mkdir .ebextensions
+cd .ebextensions
+vim 01_flask.config
+
+option_settings:
+  aws:elasticbeanstalk:application:environment:
+    PYTHONPATH: "/var/app/current:$PYTHONPATH"
+  aws:elasticbeanstalk:container:python:
+    WSGIPath: "app:app"
+
+```
 
 
-    
+3. create an Elastic Bean application    
     `eb create [your-env-name]`
     
     
