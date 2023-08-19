@@ -113,6 +113,15 @@ Navigate to your project directory and run:
 
     `eb init -i`
 
+![image](https://github.com/juliuschou/aws-code-build-exercise/assets/4725611/74ee75d4-2349-4a58-918c-f1d942fc69e0)
+
+![image](https://github.com/juliuschou/aws-code-build-exercise/assets/4725611/03f2c725-7db4-42e2-bc2c-dbb24a0fd562)
+
+![image](https://github.com/juliuschou/aws-code-build-exercise/assets/4725611/f75da3fb-af95-485a-b132-f5b45b214ebd)
+
+
+
+
 
     
     `eb create [your-env-name]`
