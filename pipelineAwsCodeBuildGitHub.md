@@ -196,6 +196,9 @@ git commit -m "Your commit message here"
 # set remote github repository
 git remote add origin git@github.com:YourUsername/YourRepository.git
 
+![image](https://github.com/juliuschou/aws-code-build-exercise/assets/4725611/5d5d35a6-8926-4b0e-87e2-fce719ec2edf)
+
+
 # Push the committed changes to the master branch of your GitHub repository 
 git push origin master
 ```
