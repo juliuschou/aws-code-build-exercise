@@ -202,3 +202,38 @@ git remote add origin git@github.com:YourUsername/YourRepository.git
 # Push the committed changes to the master branch of your GitHub repository 
 git push origin master
 ```
+
+### 6\. Set up Continuous Delivery with AWS CodeBuild:
+
+#### a. In AWS Management Console, navigate to AWS CodeBuild and create a new build project.
+
+#### b. Connect it with your GitHub repository.
+
+Choose "GitHub" as the source provider. You'll be prompted to connect your AWS account to GitHub.
+
+#### c. Configure a `buildspec.yml` file:
+
+Create a `buildspec.yml` in the root directory of your repository. A simple example for this project might look like:
+
+
+```
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.7
+    commands:
+      - echo Installing dependencies...
+      - pip install -r requirements.txt
+  build:
+    commands:
+      - echo Build completed.
+``` 
+
+#### d. Use AWS CodePipeline:
+
+1.  Navigate to the AWS CodePipeline console and create a new pipeline.
+2.  Connect your GitHub repository as the source stage.
+3.  For the build stage, select the AWS CodeBuild project you set up earlier.
+4.  For the deployment stage, select AWS Elastic Beanstalk and choose the application and environment you set up.
